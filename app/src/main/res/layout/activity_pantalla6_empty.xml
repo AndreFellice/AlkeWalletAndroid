@@ -14,7 +14,7 @@
         android:layout_height="48dp"
         android:backgroundTint="@color/color6"
         android:text="@string/btn10"
-        android:textColor="@color/color3"
+        android:textColor="@color/color2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
@@ -78,15 +78,15 @@
 
     <ImageView
         android:id="@+id/panel2"
-        android:layout_width="391dp"
-        android:layout_height="318dp"
+        android:layout_width="396dp"
+        android:layout_height="353dp"
         android:contentDescription="@string/panel2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903"
+        app:layout_constraintVertical_bias="0.981"
         app:srcCompat="@drawable/degradado3" />
 
     <EditText
@@ -98,7 +98,7 @@
         android:ems="10"
         android:hint="@string/transferencia"
         android:inputType="numberDecimal"
-        android:textColorHint="@color/material_dynamic_neutral90"
+        android:textColorHint="@color/material_dynamic_neutral80"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
@@ -136,6 +136,19 @@
         app:layout_constraintVertical_bias="0.151"
         app:srcCompat="@drawable/scarlett"
         tools:ignore="UnusedAttribute,ImageContrastCheck"/>
+
+    <ImageView
+        android:id="@+id/logo6"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:contentDescription="@string/logo6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.564"
+        app:srcCompat="@drawable/logoalkewallet" />
 
     <TextView
         android:id="@+id/textv29"
@@ -218,10 +231,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.543" />
 
     <TextView
         android:id="@+id/textv34"

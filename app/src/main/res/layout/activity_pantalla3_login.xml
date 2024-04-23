@@ -58,8 +58,8 @@
 
     <TextView
         android:id="@+id/textv2"
-        android:layout_width="328dp"
-        android:layout_height="65dp"
+        android:layout_width="338dp"
+        android:layout_height="62dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/jua"
         android:text="@string/textv2"
@@ -71,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/textv3"
@@ -103,6 +103,7 @@
         android:id="@+id/Email"
         android:layout_width="338dp"
         android:layout_height="52dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/Email"
         android:inputType="textEmailAddress"
@@ -114,8 +115,7 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.338" />
 
     <EditText
         android:id="@+id/Password"
@@ -148,5 +148,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.457"
         app:srcCompat="@android:drawable/ic_menu_view" />
+
+    <ImageView
+        android:id="@+id/logo3"
+        android:layout_width="78dp"
+        android:layout_height="68dp"
+        android:contentDescription="@string/logo3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144"
+        app:srcCompat="@drawable/logoalkewallet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

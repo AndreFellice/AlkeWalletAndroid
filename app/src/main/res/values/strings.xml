@@ -32,7 +32,7 @@
     <string name="ojo2">ojo2</string>
     <string name="ojo3">ojo3</string>
     <string name="textv11">Mi Perfil</string>
-    <string name="textv12">Nombre Cliente</string>
+    <string name="textv12">Scarlett Johansson</string>
     <string name="textv13">Mi Informacion</string>
     <string name="textv14">Mis Tarjetas</string>
     <string name="textv15">Opciones</string>
@@ -58,7 +58,6 @@
     <string name="angelina">jolie</string>
     <string name="textv21">Notas de Transferencia</string>
     <string name="notas">Agregar notas de transferecia (opcional)</string>
-    <string name="btn8">Enviar Dinero</string>
     <string name="arrow6">arrow6</string>
     <string name="linea">linea</string>
     <string name="textv22">Cantidad a transferir</string>
@@ -74,13 +73,14 @@
     <string name="notas2">Agregar notas de transferecia (opcional)</string>
     <string name="textv27">Notas de Transferencia</string>
     <string name="arrow8">arrow7</string>
+    <string name="btn8">Enviar Dinero</string>
     <string name="btn9">Recibir Dinero</string>
     <string name="textv28">Inicio</string>
     <string name="textv29">Bienvenido(a)</string>
     <string name="textv30">Nombre cliente</string>
     <string name="textv31">Balance Total</string>
     <string name="balance">"   "$ 0000.00</string>
-    <string name="foto_cliente">foto_cliente</string>
+    <string name="foto_cliente">foto_titular</string>
     <string name="btn10">Enviar Dinero</string>
     <string name="btn11">Recibir Dinero</string>
     <string name="arrow9">arrow9</string>
@@ -93,6 +93,40 @@
     <string name="textv33">Ultimas Transacciones</string>
     <string name="textv34">No hay transacciones registradas!</string>
     <string name="libro">sin notificaciones</string>
-
+    <string name="ola">detalle</string>
+    <string name="logo3">logo3</string>
+    <string name="logo4">logo4</string>
+    <string name="logo5">logo5</string>
+    <string name="logo6">logo6</string>
+    <string name="transaccion1">foto_cliente</string>
+    <string name="transaccion2">foto_cliente2</string>
+    <string name="transaccion3">foto_cliente3</string>
+    <string name="transaccion4">foto_cliente4</string>
+    <string name="transaccion5">foto_cliente5</string>
+    <string name="trans1">Angelina Jolie</string>
+    <string name="trans2">Gal Gadot</string>
+    <string name="trans3">Jennifer Lawrence</string>
+    <string name="trans4">Margot Robbie</string>
+    <string name="trans5">Alexandra Daddario</string>
+    <string name="date_time1"> Abr Vie 14. 10:23 </string>
+    <string name="date_time2"> Abr Lun 24. 13:30 </string>
+    <string name="date_time3"> Abr Vie 04. 18:10 </string>
+    <string name="date_time4"> Abr Mar 31. 09:12 </string>
+    <string name="date_time5"> Abr Vie 02. 08:37 </string>
+    <string name="signo1">+</string>
+    <string name="signo2">-</string>
+    <string name="signo3">+</string>
+    <string name="signo4">+</string>
+    <string name="signo5">-</string>
+    <string name="cantTrans1">"     "$13000.00</string>
+    <string name="cantTrans2">"     "$12000000.00</string>
+    <string name="cantTrans3">"     "$350000.00</string>
+    <string name="cantTrans4">"     "$4703000.00</string>
+    <string name="cantTrans5">"     "$12500.00</string>
+    <string name="colores">dibujo</string>
+    <string name="cascada">cascada</string>
+    <string name="cielo">cielo</string>
+    <string name="tarjeta">tarjetas</string>
+    <string name="mar">colores</string>
 
 </resources>
