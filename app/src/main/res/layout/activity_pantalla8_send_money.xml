@@ -119,6 +119,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.349" />
 
+    <ImageView
+        android:id="@+id/manos"
+        android:layout_width="416dp"
+        android:layout_height="475dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="1dp"
+        android:contentDescription="@string/manos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textv21"
+        app:srcCompat="@drawable/trasnf" />
+
     <EditText
         android:id="@+id/notas"
         android:layout_width="366dp"
@@ -146,10 +160,10 @@
         android:text="@string/btn8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.928" />
 
     <ImageView
         android:id="@+id/arrow6"
@@ -158,10 +172,10 @@
         android:contentDescription="@string/arrow6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.291"
+        app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.905"
+        app:layout_constraintVertical_bias="0.921"
         app:srcCompat="@drawable/img_11" />
 
     <ImageView

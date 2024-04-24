@@ -84,20 +84,6 @@
         app:layout_constraintVertical_bias="0.398" />
 
     <ImageView
-        android:id="@+id/colores"
-        android:layout_width="448dp"
-        android:layout_height="376dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/colores"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589"
-        app:srcCompat="@drawable/colores" />
-
-    <ImageView
         android:id="@+id/logo2"
         android:layout_width="149dp"
         android:layout_height="151dp"
