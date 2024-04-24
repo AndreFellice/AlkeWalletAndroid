@@ -89,6 +89,19 @@
         app:layout_constraintVertical_bias="0.981"
         app:srcCompat="@drawable/degradado3" />
 
+    <ImageView
+        android:id="@+id/noche"
+        android:layout_width="566dp"
+        android:layout_height="353dp"
+        android:layout_marginBottom="34dp"
+        android:contentDescription="@string/cosmo"
+        app:layout_constraintBottom_toTopOf="@+id/balance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/cosmo" />
+
     <EditText
         android:id="@+id/balance"
         android:layout_width="234dp"
@@ -105,21 +118,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.373" />
-
-    <TextView
-        android:id="@+id/textv28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jua"
-        android:text="@string/textv28"
-        android:textColor="@color/white"
-        android:textSize="29sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
 
     <ImageView
         android:id="@+id/foto_cliente"
@@ -150,13 +148,44 @@
         app:layout_constraintVertical_bias="0.585"
         app:srcCompat="@drawable/logoalkewallet" />
 
+    <ImageView
+        android:id="@+id/campana"
+        android:layout_width="35dp"
+        android:layout_height="36dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/campana"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345"
+        app:srcCompat="@drawable/img_12" />
+
+
+
+    <TextView
+        android:id="@+id/textv28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jua"
+        android:text="@string/textv28"
+        android:textColor="@color/white"
+        android:textSize="29sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
     <TextView
         android:id="@+id/textv29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/jua"
         android:text="@string/textv29"
-        android:textColor="@color/material_dynamic_neutral90"
+        android:textColor="@color/material_dynamic_neutral50"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +201,7 @@
         android:layout_height="84dp"
         android:fontFamily="@font/jua"
         android:text="@string/textv30"
-        android:textColor="@color/material_dynamic_neutral10"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -196,33 +225,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.334" />
 
-    <ImageView
-        android:id="@+id/campana"
-        android:layout_width="35dp"
-        android:layout_height="36dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="@string/campana"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.914"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345"
-        app:srcCompat="@drawable/img_12" />
-
-    <ImageView
-        android:id="@+id/notificacion"
-        android:layout_width="19dp"
-        android:layout_height="19dp"
-        android:contentDescription="@string/notificacion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337"
-        app:srcCompat="@drawable/img_14" />
-
     <TextView
         android:id="@+id/textv33"
         android:layout_width="wrap_content"
@@ -244,6 +246,8 @@
         android:layout_height="wrap_content"
         android:text="@string/textv34"
         android:textColor="@color/color3"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.525"
@@ -253,15 +257,15 @@
 
     <ImageView
         android:id="@+id/libro"
-        android:layout_width="122dp"
-        android:layout_height="163dp"
+        android:layout_width="146dp"
+        android:layout_height="196dp"
         android:contentDescription="@string/libro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845"
+        app:layout_constraintVertical_bias="0.852"
         app:srcCompat="@drawable/img_15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

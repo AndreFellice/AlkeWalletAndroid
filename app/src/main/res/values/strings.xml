@@ -89,7 +89,6 @@
     <string name="panel2">gris degrade</string>
     <string name="campana">notificaciones</string>
     <string name="notificacion">por colores</string>
-    <string name="textv32">Ultimas Transacciones</string>
     <string name="textv33">Ultimas Transacciones</string>
     <string name="textv34">No hay transacciones registradas!</string>
     <string name="libro">sin notificaciones</string>
@@ -129,5 +128,10 @@
     <string name="tarjeta">tarjetas</string>
     <string name="mar">colores</string>
     <string name="manos">manos</string>
+    <string name="manos2">manos</string>
+    <string name="cosmo">noche</string>
+    <string name="cosmo2">noche</string>
+    <string name="arriba">flecha up</string>
+    <string name="abajo">flecha down</string>
 
 </resources>
