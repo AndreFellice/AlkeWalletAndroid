@@ -81,6 +81,7 @@
     <string name="textv31">Balance Total</string>
     <string name="balance">"   "$ 0000.00</string>
     <string name="foto_cliente">foto_titular</string>
+    <string name="foto_cliente2">foto_titular</string>
     <string name="btn10">Enviar Dinero</string>
     <string name="btn11">Recibir Dinero</string>
     <string name="arrow9">arrow9</string>

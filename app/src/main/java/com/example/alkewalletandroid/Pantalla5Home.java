@@ -23,6 +23,7 @@ public class Pantalla5Home extends AppCompatActivity {
         Button enviar = findViewById(R.id.btn8);
         Button recibir = findViewById(R.id.btn9);
         ImageView notificacion= findViewById(R.id.campana);
+        ImageView perfil2 = findViewById(R.id.foto_cliente2);
 
 
         enviar.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +49,15 @@ public class Pantalla5Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        perfil2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Pantalla5Home.this, Pantalla7Profile.class);
+                startActivity(intent);
+            }
+        });
+
 
         ImageView volver = findViewById(R.id.logo5);
         volver.setOnClickListener(new View.OnClickListener() {

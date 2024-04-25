@@ -268,4 +268,17 @@
         app:layout_constraintVertical_bias="0.852"
         app:srcCompat="@drawable/img_15" />
 
+    <ImageView
+        android:id="@+id/notificacion"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:contentDescription="@string/notificacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336"
+        app:srcCompat="@android:drawable/ic_notification_overlay" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

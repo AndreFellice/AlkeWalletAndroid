@@ -25,6 +25,7 @@ public class Pantalla6Empty extends AppCompatActivity {
 
         Button enviar = findViewById(R.id.btn10);
         Button recibir = findViewById(R.id.btn11);
+        ImageView perfil = findViewById(R.id.foto_cliente);
 
 
 
@@ -40,6 +41,14 @@ public class Pantalla6Empty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Pantalla6Empty.this, Pantalla9RequestM.class) ;
+                startActivity(intent);
+            }
+        });
+
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Pantalla6Empty.this, Pantalla7Profile.class);
                 startActivity(intent);
             }
         });
