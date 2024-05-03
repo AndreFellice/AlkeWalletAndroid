@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
-    tools:context=".Pantalla3Login">
+    tools:context=".view.Pantalla3Login">
 
     <ImageView
         android:id="@+id/colores2"
@@ -16,10 +16,10 @@
         android:contentDescription="@string/colores"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808"
+        app:layout_constraintVertical_bias="0.801"
         app:srcCompat="@drawable/colores" />
 
     <Button
@@ -58,17 +58,18 @@
 
     <Button
         android:id="@+id/btn5"
-        android:layout_width="235dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/color3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cardview_dark_background"
         android:text="@string/btn5"
+        android:textColor="@color/white"
+        android:textColorLink="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <TextView
         android:id="@+id/textv2"
@@ -151,7 +152,7 @@
         app:layout_constraintVertical_bias="0.458" />
 
     <ImageView
-        android:id="@+id/ojo2"
+        android:id="@+id/ojo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/ojo"
@@ -161,7 +162,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.457"
-        app:srcCompat="@android:drawable/ic_menu_view" />
+        app:srcCompat="@drawable/visibility_off" />
 
     <ImageView
         android:id="@+id/logo3"
@@ -175,5 +176,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.134"
         app:srcCompat="@drawable/logoalkewallet" />
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="396dp"
+        android:layout_height="794dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

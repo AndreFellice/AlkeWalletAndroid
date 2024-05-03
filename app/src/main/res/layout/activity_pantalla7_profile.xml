@@ -9,6 +9,17 @@
     android:textAlignment="gravity"
     tools:context=".Pantalla7Profile">
 
+    <VideoView
+        android:id="@+id/videoView3"
+        android:layout_width="465dp"
+        android:layout_height="862dp"
+        android:layout_marginTop="92dp"
+        android:contentDescription="@string/videoView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/cosmo2"
         android:layout_width="wrap_content"

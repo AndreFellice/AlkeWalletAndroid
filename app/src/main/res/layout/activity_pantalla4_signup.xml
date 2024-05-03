@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
-    tools:context=".Pantalla4Signup">
+    tools:context=".view.Pantalla4Signup">
 
     <ImageView
         android:id="@+id/colores"
@@ -19,13 +19,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944"
+        app:layout_constraintVertical_bias="0.97"
         app:srcCompat="@drawable/colores" />
 
     <Button
         android:id="@+id/btn6"
-        android:layout_width="296dp"
-        android:layout_height="64dp"
+        android:layout_width="345dp"
+        android:layout_height="62dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/material_dynamic_neutral_variant10"
         android:text="@string/btn6"
@@ -34,27 +34,28 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.573"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+        app:layout_constraintVertical_bias="0.957" />
 
     <Button
         android:id="@+id/btn7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="#706D6D"
+        android:backgroundTint="@color/color2"
         android:text="@string/btn7"
-        android:textColor="#131313"
+        android:textColor="@color/white"
+        android:textColorLink="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <EditText
         android:id="@+id/apellidos"
@@ -195,7 +196,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.576"
-        app:srcCompat="@android:drawable/ic_menu_view" />
+        app:srcCompat="@drawable/visibility_off" />
 
     <TextView
         android:id="@+id/textv6"
@@ -222,7 +223,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.675"
-        app:srcCompat="@android:drawable/ic_menu_view" />
+        app:srcCompat="@drawable/visibility_off" />
 
     <EditText
         android:id="@+id/Email2"
@@ -243,10 +244,23 @@
         app:layout_constraintVertical_bias="0.48"
         tools:ignore="Autofill" />
 
+    <ImageView
+        android:id="@+id/perfil_image_view"
+        android:layout_width="102dp"
+        android:layout_height="107dp"
+        android:contentDescription="@string/perfil_image_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/textv5"
-        android:layout_width="337dp"
-        android:layout_height="50dp"
+        android:layout_width="330dp"
+        android:layout_height="48dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/jua"
         android:text="@string/textv5"
@@ -255,23 +269,40 @@
         android:textSize="29sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintVertical_bias="0.064"
         tools:ignore="Accessibility Issue" />
 
     <ImageView
         android:id="@+id/logo4"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="50dp"
+        android:layout_height="53dp"
         android:contentDescription="@string/logo4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117"
+        app:layout_constraintVertical_bias="0.171"
         app:srcCompat="@drawable/logoalkewallet" />
+
+    <Button
+        android:id="@+id/btnTomarFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color2"
+        android:onClick="tomarFoto"
+        android:text="@string/btnTomarFoto"
+        android:textColor="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.759" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
