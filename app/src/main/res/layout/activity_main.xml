@@ -21,6 +21,17 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/nubes" />
 
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="246dp"
+        android:layout_height="325dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405" />
+
     <ImageView
         android:id="@+id/colores"
         android:layout_width="413dp"
@@ -35,8 +46,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="160dp"
-        android:layout_height="171dp"
+        android:layout_width="146dp"
+        android:layout_height="155dp"
         android:contentDescription="@string/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
