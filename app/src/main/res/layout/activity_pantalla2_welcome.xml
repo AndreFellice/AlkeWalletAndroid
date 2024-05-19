@@ -16,6 +16,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <VideoView
+        android:id="@+id/videoView2"
+        android:layout_width="424dp"
+        android:layout_height="759dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/btn1"
         android:layout_width="297dp"
