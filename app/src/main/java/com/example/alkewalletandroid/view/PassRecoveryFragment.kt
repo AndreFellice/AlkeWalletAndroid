@@ -9,13 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.viewModels
 import com.example.alkewalletandroid.R
 import com.example.alkewalletandroid.databinding.FragmentPassRecoveryBinding
 import com.example.alkewalletandroid.model.AppDataBase
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.example.alkewalletandroid.viewmodel.PassRecoveryViewModel
+import com.example.alkewalletandroid.viewmodel.PassRecoveryViewModelFactory
 
 
 class PassRecoveryFragment : Fragment() {
@@ -26,7 +25,9 @@ class PassRecoveryFragment : Fragment() {
     private var isPasswordVisible = false
     private var isRPasswordVisible = false
 
-
+    private val viewModel: PassRecoveryViewModel by viewModels {
+        PassRecoveryViewModelFactory(AppDataBase.getInstance(requireContext()))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,10 +48,8 @@ class PassRecoveryFragment : Fragment() {
             // metodo que realiza la lógica de recuperación y actualización de la contraseña
          if (validatePassword(password, confirmPassword)) {
                 updateUserPassword(email, password)
-                navigateToLoginActivity()
             } else {
-                Toast.makeText(requireContext(), "Las contraseñas no coinciden", Toast.LENGTH_SHORT)
-                    .show()
+             showToast("Las contraseñas no coinciden")
             }
         }
 
@@ -67,21 +66,16 @@ class PassRecoveryFragment : Fragment() {
     }
 
     private fun updateUserPassword(email: String, password: String) {
-         // Actualiza la contraseña en la base de datos para el correo electrónico ingresado
-        val userDao = AppDataBase.getInstance(requireContext()).userDao()
-        lifecycleScope.launch {
-            withContext(Dispatchers.IO) {
-                val user = userDao.getUserByEmail(email)
-                if (user != null) {
-                    user.password = password
-                    userDao.update(user)
-                    showToast("Contraseña actualizada correctamente")
-
-                } else {
-                    showToast("No se encontró ningún usuario con el correo electrónico proporcionado")
-                }
+         // Actualiza la contraseña en la base de datos para el correo electrónico ingresado a traves de viewmodel
+        viewModel.updateUserPassword(email, password,
+            onSuccess = {
+                showToast("Contraseña actualizada correctamente")
+                navigateToLoginActivity()
+            },
+            onError = { message ->
+                showToast(message)
             }
-        }
+        )
     }
 
     private fun showToast(message: String) {
