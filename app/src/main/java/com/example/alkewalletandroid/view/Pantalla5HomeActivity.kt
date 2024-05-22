@@ -1,70 +1,44 @@
-package com.example.alkewalletandroid;
+package com.example.alkewalletandroid.view
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import com.example.alkewalletandroid.databinding.ActivityPantalla5HomeBinding
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
+class Pantalla5HomeActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPantalla5HomeBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.enableEdgeToEdge()
+        binding = ActivityPantalla5HomeBinding.inflate(layoutInflater)
+        setContentView(binding.getRoot())
 
-import com.example.alkewalletandroid.view.MainActivity;
+        binding.btn8.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@Pantalla5HomeActivity, Pantalla8SendMActivivity::class.java)
+            startActivity(intent)
+        })
 
-public class Pantalla5Home extends AppCompatActivity {
+        binding.btn9.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@Pantalla5HomeActivity, Pantalla9RequestMActivity::class.java)
+            startActivity(intent)
+        })
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_pantalla5_home);
+        binding.campana.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@Pantalla5HomeActivity, Pantalla6EmptyActivity::class.java)
+            startActivity(intent)
+        })
 
-        Button enviar = findViewById(R.id.btn8);
-        Button recibir = findViewById(R.id.btn9);
-        ImageView notificacion= findViewById(R.id.campana);
-        ImageView perfil2 = findViewById(R.id.foto_cliente2);
-
-
-        enviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Pantalla5Home.this, Pantalla8SendM.class) ;
-                startActivity(intent);
-            }
-        });
-
-        recibir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Pantalla5Home.this, Pantalla9RequestM.class) ;
-                startActivity(intent);
-            }
-        });
-
-        notificacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Pantalla5Home.this, Pantalla6Empty.class);
-                startActivity(intent);
-            }
-        });
-
-        perfil2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Pantalla5Home.this, Pantalla7Profile.class);
-                startActivity(intent);
-            }
-        });
+        binding.fotoCliente2.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@Pantalla5HomeActivity, Pantalla7ProfileActivity::class.java)
+            startActivity(intent)
+        })
 
 
-        ImageView volver = findViewById(R.id.logo5);
-        volver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        binding.logo5.setOnClickListener(View.OnClickListener {
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+        })
     }
 }

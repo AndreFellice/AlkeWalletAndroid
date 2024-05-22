@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.alkewalletandroid.viewmodel.Pantalla4SignupViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
-    tools:context=".view.Pantalla4Signup">
+    tools:context=".view.Pantalla4SignupActivity">
 
     <ImageView
         android:id="@+id/colores"
@@ -246,12 +254,12 @@
 
     <ImageView
         android:id="@+id/perfil_image_view"
-        android:layout_width="102dp"
-        android:layout_height="107dp"
+        android:layout_width="101dp"
+        android:layout_height="124dp"
         android:contentDescription="@string/perfil_image_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.105"
@@ -306,3 +314,4 @@
         app:layout_constraintVertical_bias="0.759" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

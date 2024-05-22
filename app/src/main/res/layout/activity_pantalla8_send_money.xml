@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/degrade_sweep"
     android:textAlignment="textEnd"
-    tools:context=".Pantalla8SendM">
+    tools:context=".view.Pantalla8SendMActivivity">
 
     <TextView
         android:id="@+id/textv17"

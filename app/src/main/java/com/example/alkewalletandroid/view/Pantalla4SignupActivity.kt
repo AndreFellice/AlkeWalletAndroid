@@ -1,32 +1,54 @@
 package com.example.alkewalletandroid.view
 
-import android.annotation.SuppressLint
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.InputType
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.alkewalletandroid.R
 import com.example.alkewalletandroid.databinding.ActivityPantalla4SignupBinding
-import com.example.alkewalletandroid.viewmodel.UserViewModel
+import com.example.alkewalletandroid.viewmodel.Pantalla4SignupViewModel
 
 
-class Pantalla4Signup : AppCompatActivity() {
+class Pantalla4SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPantalla4SignupBinding
     private var isPasswordVisible = false
     private var isRPasswordVisible = false
-        private val viewModel: UserViewModel by viewModels()
+    private lateinit var takePictureLauncher: ActivityResultLauncher<Intent>
+    private val viewModel: Pantalla4SignupViewModel by viewModels()
         companion object {
+
             private const val REQUEST_IMAGE_CAPTURE = 1
+            private const val CAMERA_PERMISSION_CODE = 100
         }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.enableEdgeToEdge()
         binding = ActivityPantalla4SignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        takePictureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val data: Intent? = result.data
+                val extras = data?.extras
+                val imageBitmap = extras?.get("data") as? Bitmap
+                if (imageBitmap != null) {
+                    binding.perfilImageView.setImageBitmap(imageBitmap)
+                } else {
+                    Toast.makeText(this, "Error al obtener la foto", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
         binding.apply {
             ojo2.setOnClickListener { togglePasswordVisibility() }
             ojo3.setOnClickListener { toggleRPasswordVisibility() }
@@ -35,9 +57,20 @@ class Pantalla4Signup : AppCompatActivity() {
             logo4.setOnClickListener { navigateToMainActivity() }
             btnTomarFoto.setOnClickListener { takePhoto() }
         }
+        viewModel.signupSuccess.observe(this) { success ->
+            if (success) {
+                Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                navigateToLogin()
+            }
+        }
+
+        viewModel.signupError.observe(this) { error ->
+            Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+        }
     }
+
  private  fun navigateToMainActivity(){
-     val intent = Intent(this, Pantalla2Welcome::class.java)
+     val intent = Intent(this, Pantalla2WelcomeActivity::class.java)
      startActivity(intent)
  }
     private fun togglePasswordVisibility() {
@@ -87,37 +120,52 @@ class Pantalla4Signup : AppCompatActivity() {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return
         }
-      //  userViewModel.registerUser(firstName, lastName, userEmail, userPassword)
+     viewModel.registerUser(firstName, lastName, userEmail, userPassword)
 
     }
 
-    @Suppress("DEPRECATION")
-    @SuppressLint("QueryPermissionsNeeded")
     private fun takePhoto() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // Permission is not granted, request the permission
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA),
+                CAMERA_PERMISSION_CODE
+            )
+        } else {
+            // Permission already granted, open the camera
+            openCamera()
+        }
+    }
+        private fun openCamera() {
         val takePhotoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (takePhotoIntent.resolveActivity(packageManager) != null) {
-            startActivityForResult(takePhotoIntent, REQUEST_IMAGE_CAPTURE)
+            takePictureLauncher.launch(takePhotoIntent)
         }
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            val extras = data?.extras
-            val imageBitmap = extras?.get("data") as? Bitmap
-            if (imageBitmap != null) {
-                binding.perfilImageView.setImageBitmap(imageBitmap)
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                // Permission granted, open the camera
+                openCamera()
             } else {
-                Toast.makeText(this, "Error al obtener la foto", Toast.LENGTH_SHORT).show()
+                // Permission denied
+                Toast.makeText(this, "Permiso para usar la cámara denegado", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun navigateToLogin() {
-        val intent = Intent(this@Pantalla4Signup, Pantalla3Login::class.java)
+        val intent = Intent(this@Pantalla4SignupActivity, Pantalla3LoginActivity::class.java)
         startActivity(intent)
 
     }
+
 
 }

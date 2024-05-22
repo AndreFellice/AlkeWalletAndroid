@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
     android:textAlignment="gravity"
-    tools:context=".Pantalla7Profile">
+    tools:context=".view.Pantalla7ProfileActivity">
 
     <VideoView
         android:id="@+id/videoView3"

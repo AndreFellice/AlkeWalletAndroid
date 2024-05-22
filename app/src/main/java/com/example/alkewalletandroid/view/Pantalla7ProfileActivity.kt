@@ -1,46 +1,45 @@
-package com.example.alkewalletandroid;
+package com.example.alkewalletandroid.view
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.VideoView;
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.view.View
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.alkewalletandroid.R
+import com.example.alkewalletandroid.databinding.ActivityPantalla7ProfileBinding
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+class Pantalla7ProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPantalla7ProfileBinding
 
-public class Pantalla7Profile extends AppCompatActivity {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.enableEdgeToEdge()
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_pantalla7_profile);
-        VideoView videoView = findViewById(R.id.videoView3);
+        // Inflar el binding
+        binding = ActivityPantalla7ProfileBinding.inflate(
+            layoutInflater
+        )
+        setContentView(binding!!.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video3;
-        videoView.setVideoURI(Uri.parse(videoPath));
-        videoView.start();
+        // Establecer la ruta del video y comenzar el video
+        val videoPath = "android.resource://" + packageName + "/" + R.raw.video3
+        binding.videoView3.setVideoURI(Uri.parse(videoPath))
+        binding.videoView3.start()
 
+        // Manejar los insets de la ventana
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v: View, insets: WindowInsetsCompat ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
-        ImageView home = findViewById(R.id.scarlett);
-
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Pantalla7Profile.this, Pantalla5Home.class);
-                startActivity(intent);
-            }
-        });
-
+        // Establecer OnClickListener para el botón de inicio
+        binding.scarlett.setOnClickListener {
+            val intent = Intent(this@Pantalla7ProfileActivity, Pantalla5HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
