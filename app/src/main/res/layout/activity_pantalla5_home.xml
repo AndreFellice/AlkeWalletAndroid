@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/degrade_sweep"
-    tools:context=".Pantalla5Home">
+    tools:context=".view.Pantalla5HomeActivity">
 
     <ImageView
         android:id="@+id/panel1"
@@ -208,10 +208,10 @@
         android:contentDescription="@string/foto_cliente2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141"
+        app:layout_constraintVertical_bias="0.19"
         app:srcCompat="@drawable/scarlett"
         tools:ignore="UnusedAttribute,ImageContrastCheck" />
 
@@ -708,6 +708,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.689"
         app:srcCompat="@drawable/img_7" />
+
+    <Button
+        android:id="@+id/perfil_usuario"
+        android:layout_width="106dp"
+        android:layout_height="42dp"
+        android:backgroundTint="@color/color3"
+        android:text="@string/perfil_usuario"
+        android:textColorLink="@color/color3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.116" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

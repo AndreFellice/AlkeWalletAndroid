@@ -134,6 +134,8 @@
     <string name="cosmo2">noche</string>
     <string name="arriba">flecha up</string>
     <string name="abajo">flecha down</string>
+    <string name="videoView">video 1</string>
+    <string name="videoView2">video 2</string>
     <string name="videoView3">video 3</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -150,4 +152,5 @@
     <string name="perfil_image_view"> Foto de perfil </string>
     <string name="ojo4">ojo4</string>
     <string name="ojo5">ojo5</string>
+    <string name="perfil_usuario">Mi Perfil</string>
 </resources>

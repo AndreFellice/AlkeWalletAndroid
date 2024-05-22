@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado2"
-    tools:context=".Pantalla6Empty">
+    tools:context=".view.Pantalla6EmptyActivity">
 
     <Button
         android:id="@+id/btn10"

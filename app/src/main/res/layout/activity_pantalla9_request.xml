@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/degrade_sweep"
     android:textAlignment="textEnd"
-    tools:context=".Pantalla9RequestM">
+    tools:context=".view.Pantalla9RequestMActivity">
 
     <ImageView
         android:id="@+id/manos2"
