@@ -1,9 +1,11 @@
 package com.example.alkewalletandroid.view
 
 import android.Manifest
+import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.InputType
@@ -18,6 +20,8 @@ import androidx.core.content.ContextCompat
 import com.example.alkewalletandroid.R
 import com.example.alkewalletandroid.databinding.ActivityPantalla4SignupBinding
 import com.example.alkewalletandroid.viewmodel.Pantalla4SignupViewModel
+import java.io.IOException
+import java.io.OutputStream
 
 
 class Pantalla4SignupActivity : AppCompatActivity() {
@@ -25,10 +29,10 @@ class Pantalla4SignupActivity : AppCompatActivity() {
     private var isPasswordVisible = false
     private var isRPasswordVisible = false
     private lateinit var takePictureLauncher: ActivityResultLauncher<Intent>
+    private lateinit var userPhotoUri: Uri // Variable para almacenar la URI de la foto
     private val viewModel: Pantalla4SignupViewModel by viewModels()
         companion object {
 
-            private const val REQUEST_IMAGE_CAPTURE = 1
             private const val CAMERA_PERMISSION_CODE = 100
         }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,18 +41,24 @@ class Pantalla4SignupActivity : AppCompatActivity() {
         binding = ActivityPantalla4SignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        takePictureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == RESULT_OK) {
-                val data: Intent? = result.data
-                val extras = data?.extras
-                val imageBitmap = extras?.get("data") as? Bitmap
-                if (imageBitmap != null) {
-                    binding.perfilImageView.setImageBitmap(imageBitmap)
-                } else {
-                    Toast.makeText(this, "Error al obtener la foto", Toast.LENGTH_SHORT).show()
+        takePictureLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
+                    val data: Intent? = result.data
+                    val extras = data?.extras
+                    val imageBitmap = extras?.get("data") as? Bitmap
+                    if (imageBitmap != null) {
+                        // Guardar la imagen y obtener su URI
+                        userPhotoUri = saveImageAndGetUri(imageBitmap)
+                        binding.perfilImageView.setImageBitmap(imageBitmap)
+                    } else {
+                        Toast.makeText(this, "Error al obtener la foto", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
-        }
+
+
+
         binding.apply {
             ojo2.setOnClickListener { togglePasswordVisibility() }
             ojo3.setOnClickListener { toggleRPasswordVisibility() }
@@ -68,7 +78,38 @@ class Pantalla4SignupActivity : AppCompatActivity() {
             Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
         }
     }
+    // Función para guardar la imagen en la galería y obtener su URI
+    private fun saveImageAndGetUri(imageBitmap: Bitmap): Uri {
+        val contentValues = ContentValues().apply {
+            put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+            put(MediaStore.Images.Media.DISPLAY_NAME, "user_photo_${System.currentTimeMillis()}.jpg")
+        }
+        val savedImageUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
 
+        if (savedImageUri != null) {
+            var outputStream: OutputStream? = null
+            try {
+                outputStream = contentResolver.openOutputStream(savedImageUri)
+                if (outputStream != null) {
+                    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+                    outputStream.flush()
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+            } finally {
+                outputStream?.close()
+            }
+        }
+        return savedImageUri ?: Uri.EMPTY
+    }
+    private fun navigateToHome() {
+        // Pasa la URI de la foto a la actividad de inicio
+        val intent = Intent(this,Pantalla5HomeActivity::class.java).apply {
+            putExtra("user_photo_uri", userPhotoUri.toString())
+        }
+        startActivity(intent)
+
+    }
  private  fun navigateToMainActivity(){
      val intent = Intent(this, Pantalla2WelcomeActivity::class.java)
      startActivity(intent)
@@ -120,7 +161,14 @@ class Pantalla4SignupActivity : AppCompatActivity() {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return
         }
-     viewModel.registerUser(firstName, lastName, userEmail, userPassword)
+
+        if (userPhotoUri == null) {
+            Toast.makeText(this, "Por favor, toma una foto de perfil", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+
+     viewModel.registerUser(firstName, lastName, userEmail, userPassword, userPhotoUri.toString())
 
     }
 
@@ -130,23 +178,36 @@ class Pantalla4SignupActivity : AppCompatActivity() {
                 Manifest.permission.CAMERA
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            // Permission is not granted, request the permission
+            // El permiso no ha sido concedido, se solicita al usuario junto con una explicación
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.CAMERA
+                )
+            ) {
+                // Mostrar explicación al usuario antes de solicitar el permiso
+                Toast.makeText(
+                    this,
+                    "Se necesita el permiso de cámara para tomar una foto de perfil.",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            // Solicitar el permiso
             ActivityCompat.requestPermissions(
                 this,
                 arrayOf(Manifest.permission.CAMERA),
                 CAMERA_PERMISSION_CODE
             )
         } else {
-            // Permission already granted, open the camera
+            // El permiso ya ha sido concedido, abrir la cámara
             openCamera()
         }
     }
         private fun openCamera() {
-        val takePhotoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (takePhotoIntent.resolveActivity(packageManager) != null) {
-            takePictureLauncher.launch(takePhotoIntent)
+            val takePhotoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (takePhotoIntent.resolveActivity(packageManager) != null) {
+                takePictureLauncher.launch(takePhotoIntent)
+            }
         }
-    }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)

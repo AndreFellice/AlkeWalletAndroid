@@ -21,17 +21,27 @@ class Pantalla4SignupViewModel(application: Application) : AndroidViewModel(appl
     val signupError: LiveData<String>
         get() = _signupError
 
-    fun registerUser(firstName: String, lastName: String, email: String, password: String) {
+    fun registerUser(
+        firstName: String,
+        lastName: String,
+        email: String,
+        password: String,
+        photoUri : String
+    ) {
         viewModelScope.launch {
-            val existingUser = userRepository.getUserByEmail(email)
-            if (existingUser != null) {
-                _signupError.value = "El correo ya está registrado"
-                return@launch
+            try {
+                val existingUser = userRepository.getUserByEmail(email)
+                if (existingUser != null) {
+                    _signupError.value = "El correo ya está registrado"
+                } else {
+                    val user = User(nombres = firstName, apellidos = lastName, email = email, password = password, photoUri = photoUri )
+                    userRepository.insertUser(user)
+                    _signupSuccess.value = true
+                }
+            } catch (e: Exception) {
+                _signupError.value = "Error al registrar el usuario: ${e.message}"
             }
-
-            val user = User(nombres = firstName, apellidos = lastName, email = email, password = password)
-            userRepository.insertUser(user)
-            _signupSuccess.value = true
         }
     }
+
 }

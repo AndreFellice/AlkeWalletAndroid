@@ -710,7 +710,7 @@
         app:srcCompat="@drawable/img_7" />
 
     <Button
-        android:id="@+id/perfil_usuario"
+        android:id="@+id/btnPerfil"
         android:layout_width="106dp"
         android:layout_height="42dp"
         android:backgroundTint="@color/color3"

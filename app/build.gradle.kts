@@ -1,8 +1,9 @@
 plugins {
-    alias(libs.plugins.androidApplication) // Mantén esta línea
+    alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 
-    kotlin("kapt") // Mantén este plugin para Kapt
+    id("kotlin-android")
+    id("kotlin-kapt")
    
 }
 
@@ -56,9 +57,9 @@ dependencies {
     implementation(libs.navigation.ui.ktx)
 
     // MVVM Lifecycle y LiveData
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
-    implementation("androidx.databinding:databinding-runtime:7.3.1")
+    implementation(libs.lifecycle.viewmodel.ktx.v251)
+    implementation(libs.lifecycle.livedata.ktx.v251)
+    implementation(libs.androidx.databinding.runtime)
 
     // Testing
     testImplementation(libs.junit)
@@ -66,20 +67,34 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     // Fragment KTX
-    implementation("androidx.fragment:fragment-ktx:1.5.4")
+    implementation(libs.fragment.ktx.v154)
 
     // Room
     val room_version = "2.4.0"
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
 
     // Kapt - Soporte para Kotlin Extensions y Coroutines en Room
-    implementation("androidx.room:room-ktx:$room_version")
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation(libs.room.ktx.v240)
+    kapt(libs.androidx.room.compiler.v261)
 
     // Opcional - Helpers de Test
-    testImplementation("androidx.room:room-testing:$room_version")
+    testImplementation(libs.androidx.room.testing)
 
     // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation(libs.androidx.lifecycle.extensions)
+
+    // corrutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    //Retrofit
+    implementation (libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // Retrofit with Scalar Converter
+    implementation (libs.converter.scalars)
+
+    // Glide
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
 }

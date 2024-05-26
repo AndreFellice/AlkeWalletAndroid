@@ -3,6 +3,7 @@ package com.example.alkewalletandroid.model
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 @Dao
@@ -12,7 +13,7 @@ interface UserDao {
     fun getAllUsers(): LiveData<List<User>>
 
     // Inserta un nuevo usuario en la base de datos
-    @Insert
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(user: User)
 
     // Actualiza un usuario existente en la base de datos
@@ -28,7 +29,7 @@ interface UserDao {
     fun getUserById(userId: Int): LiveData<User>
 
     // Obtiene un usuario de la base de datos por su dirección de correo electrónico
-    @Query("SELECT * FROM usuarios WHERE email = :email")
+    @Query("SELECT * FROM usuarios WHERE email = :email LIMIT 1")
     suspend fun getUserByEmail(email: String): User?
 
     // Obtiene un usuario de la base de datos por su dirección de correo electrónico y su contraseña

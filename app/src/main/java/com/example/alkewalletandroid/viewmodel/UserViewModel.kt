@@ -73,14 +73,19 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // Método para obtener un usuario por su email
-    fun getUserByEmail(email: String) {
+    fun getUserByEmail(email: String): MutableLiveData<User?> {
+        val resultLiveData = MutableLiveData<User?>()
         viewModelScope.launch {
-            val result = repository.getUserByEmail(email)
-            result.onFailure { exception ->
-                _error.value = handleDatabaseError(exception)
+            try {
+                val user = repository.getUserByEmail(email)
+                resultLiveData.postValue(user)
+            } catch (exception: Exception) {
+                _error.value = "Error al obtener el usuario: ${exception.message}"
             }
         }
+        return resultLiveData
     }
+
     // Método para obtener un usuario por su email y contraseña
     fun getUserByEmailAndPassword(email: String, password: String) {
         viewModelScope.launch {

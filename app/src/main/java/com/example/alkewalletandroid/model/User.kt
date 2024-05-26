@@ -7,8 +7,9 @@ import androidx.room.PrimaryKey
 data class User(
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0,
-    var nombres: String? = null,
-    var apellidos: String? = null,
-    var email: String? = null,
-    var password: String? = null
+    var nombres: String,
+    var apellidos: String,
+    var email: String,
+    var password: String,
+    val photoUri: String // Nuevo campo para la URI de la foto
 )

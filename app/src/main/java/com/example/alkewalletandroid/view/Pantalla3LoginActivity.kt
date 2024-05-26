@@ -2,6 +2,7 @@ package com.example.alkewalletandroid.view
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.InputType
 import android.view.inputmethod.InputMethodManager
@@ -16,6 +17,7 @@ import com.example.alkewalletandroid.R
 import com.example.alkewalletandroid.databinding.ActivityPantalla3LoginBinding
 import com.example.alkewalletandroid.model.AppDataBase
 import com.example.alkewalletandroid.model.User
+import com.example.alkewalletandroid.view.fragments.PassRecoveryFragment
 import com.example.alkewalletandroid.viewmodel.Pantalla3LoginViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -47,6 +49,7 @@ class Pantalla3LoginActivity : AppCompatActivity() {
                 }
             }
         })
+
         // Insertar usuario de ejemplo al iniciar la aplicación
         insertarUsuarioFellice()
 
@@ -84,12 +87,14 @@ class Pantalla3LoginActivity : AppCompatActivity() {
     private fun insertarUsuarioFellice() {
         lifecycleScope.launch (Dispatchers.IO){
             val userDao = AppDataBase.getInstance(applicationContext).userDao()
+            val photoUri = Uri.parse("android.resource://${packageName}/drawable/fellice")
             val usuarioEjemplo = User(
                 id = 0, // Generar ID automáticamente
                 nombres = "Andre Fellice ",
                 apellidos = "Cuetos Picon",
                 email = "andreeecp@gmail.com",
-                password = "666999"
+                password = "666999",
+                photoUri = photoUri.toString()
             )
             if (userDao.getUserByEmail("andreeecp@gmail.com") == null) {
                 userDao.insert(usuarioEjemplo)

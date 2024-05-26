@@ -74,16 +74,9 @@ class UserRepository(private val userDao: UserDao) {
      * @param email La dirección de correo electrónico del usuario a obtener.
      * @return El usuario correspondiente a la dirección de correo electrónico proporcionada, o null si no existe.
      */
-    suspend fun getUserByEmail(email: String): Result<User?> {
-        return try {
-            val user = withContext(Dispatchers.IO) {
-                userDao.getUserByEmail(email)
-            }
-            Result.success(user)
-        } catch (e: SQLException) {
-            Result.failure(e)
-        } catch (e: Exception) {
-            Result.failure(e)
+    suspend fun getUserByEmail(email: String): User? {
+        return withContext(Dispatchers.IO) {
+            userDao.getUserByEmail(email)
         }
     }
 

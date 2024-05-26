@@ -12,6 +12,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.alkewalletandroid.R
 import com.example.alkewalletandroid.databinding.ActivityPantalla7ProfileBinding
+import com.example.alkewalletandroid.view.fragments.CentroDeAyudaFragment
+import com.example.alkewalletandroid.view.fragments.MiInformacionFragment
+import com.example.alkewalletandroid.view.fragments.MisAjustesFragment
+import com.example.alkewalletandroid.view.fragments.MisTarjetasFragment
 
 class Pantalla7ProfileActivity : AppCompatActivity() {
 

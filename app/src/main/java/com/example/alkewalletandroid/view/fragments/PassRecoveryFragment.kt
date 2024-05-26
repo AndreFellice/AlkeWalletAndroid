@@ -1,4 +1,4 @@
-package com.example.alkewalletandroid.view
+package com.example.alkewalletandroid.view.fragments
 
 
 import android.content.Intent
@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import com.example.alkewalletandroid.R
 import com.example.alkewalletandroid.databinding.FragmentPassRecoveryBinding
 import com.example.alkewalletandroid.model.AppDataBase
+import com.example.alkewalletandroid.view.Pantalla3LoginActivity
 import com.example.alkewalletandroid.viewmodel.PassRecoveryViewModel
 import com.example.alkewalletandroid.viewmodel.PassRecoveryViewModelFactory
 

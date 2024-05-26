@@ -274,7 +274,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="com.example.alkewalletandroid.view.MiInformacionFragment"
+        android:name="com.example.alkewalletandroid.view.fragments.MiInformacionFragment"
         android:layout_width="404dp"
         android:layout_height="575dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -286,7 +286,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
-        android:name="com.example.alkewalletandroid.view.MisAjustesFragment"
+        android:name="com.example.alkewalletandroid.view.fragments.MisAjustesFragment"
         android:layout_width="399dp"
         android:layout_height="486dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -297,7 +297,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
-        android:name="com.example.alkewalletandroid.view.CentroDeAyudaFragment"
+        android:name="com.example.alkewalletandroid.view.fragments.CentroDeAyudaFragment"
         android:layout_width="384dp"
         android:layout_height="493dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -309,7 +309,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView4"
-        android:name="com.example.alkewalletandroid.view.MisTarjetasFragment"
+        android:name="com.example.alkewalletandroid.view.fragments.MisTarjetasFragment"
         android:layout_width="399dp"
         android:layout_height="509dp"
         app:layout_constraintBottom_toBottomOf="parent"

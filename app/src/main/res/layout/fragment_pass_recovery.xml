@@ -14,7 +14,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/degrade_sweep"
-    tools:context=".view.PassRecoveryFragment">
+    tools:context=".view.fragments.PassRecoveryFragment">
 
     <ImageView
         android:id="@+id/colores"

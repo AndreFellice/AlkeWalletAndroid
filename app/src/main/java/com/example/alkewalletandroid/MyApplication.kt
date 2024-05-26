@@ -1,6 +1,7 @@
-package com.example.alkewalletandroid.model
+package com.example.alkewalletandroid
 
 import android.app.Application
+import com.example.alkewalletandroid.model.AppDataBase
 
 class MyApplication : Application() {
     override fun onCreate() {
