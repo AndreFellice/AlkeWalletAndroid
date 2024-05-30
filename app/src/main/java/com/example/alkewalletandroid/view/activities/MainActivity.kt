@@ -1,4 +1,4 @@
-package com.example.alkewalletandroid.view
+package com.example.alkewalletandroid.view.activities
 
 import android.content.Context
 import android.content.Intent

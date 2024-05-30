@@ -1,4 +1,4 @@
-package com.example.alkewalletandroid.view
+package com.example.alkewalletandroid.view.activities
 
 import android.content.Context
 import android.content.Intent
@@ -15,8 +15,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.example.alkewalletandroid.R
 import com.example.alkewalletandroid.databinding.ActivityPantalla3LoginBinding
-import com.example.alkewalletandroid.model.AppDataBase
-import com.example.alkewalletandroid.model.User
+import com.example.alkewalletandroid.model.database.AppDataBase
+import com.example.alkewalletandroid.model.entities.User
 import com.example.alkewalletandroid.view.fragments.PassRecoveryFragment
 import com.example.alkewalletandroid.viewmodel.Pantalla3LoginViewModel
 import kotlinx.coroutines.Dispatchers

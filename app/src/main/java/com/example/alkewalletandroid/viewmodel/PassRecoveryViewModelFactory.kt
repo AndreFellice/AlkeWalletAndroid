@@ -2,7 +2,7 @@ package com.example.alkewalletandroid.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.alkewalletandroid.model.AppDataBase
+import com.example.alkewalletandroid.model.database.AppDataBase
 
 class PassRecoveryViewModelFactory(private val database: AppDataBase) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

@@ -2,7 +2,7 @@ package com.example.alkewalletandroid.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.alkewalletandroid.model.AppDataBase
+import com.example.alkewalletandroid.model.database.AppDataBase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

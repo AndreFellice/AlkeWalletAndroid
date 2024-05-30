@@ -1,8 +1,10 @@
-package com.example.alkewalletandroid.model
+package com.example.alkewalletandroid.model.repository
 
 
 import android.database.SQLException
 import androidx.lifecycle.LiveData
+import com.example.alkewalletandroid.model.dao.UserDao
+import com.example.alkewalletandroid.model.entities.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

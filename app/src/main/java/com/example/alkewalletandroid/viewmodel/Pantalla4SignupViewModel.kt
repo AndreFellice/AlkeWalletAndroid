@@ -5,9 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.alkewalletandroid.model.AppDataBase
-import com.example.alkewalletandroid.model.User
-import com.example.alkewalletandroid.model.UserRepository
+import com.example.alkewalletandroid.model.database.AppDataBase
+import com.example.alkewalletandroid.model.entities.User
+import com.example.alkewalletandroid.model.repository.UserRepository
 import kotlinx.coroutines.launch
 
 class Pantalla4SignupViewModel(application: Application) : AndroidViewModel(application) {

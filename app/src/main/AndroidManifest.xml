@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permisos necesarios -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
     <uses-feature android:name="android.hardware.camera" android:required="true" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -20,31 +24,31 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".view.Pantalla9RequestMActivity"
+            android:name=".view.activities.Pantalla9RequestMActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Pantalla8SendMActivivity"
+            android:name=".view.activities.Pantalla8SendMActivivity"
             android:exported="false" />
         <activity
-            android:name=".view.Pantalla7ProfileActivity"
+            android:name=".view.activities.Pantalla7ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Pantalla6EmptyActivity"
+            android:name=".view.activities.Pantalla6EmptyActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Pantalla5HomeActivity"
+            android:name=".view.activities.Pantalla5HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Pantalla4SignupActivity"
+            android:name=".view.activities.Pantalla4SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Pantalla3LoginActivity"
+            android:name=".view.activities.Pantalla3LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".view.Pantalla2WelcomeActivity"
+            android:name=".view.activities.Pantalla2WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -62,7 +62,7 @@ _binding = FragmentMiInformacionBinding.inflate(inflater, container,false)
 
     val id = sharedPreferences?.getString("id", "")
     val rut = sharedPreferences?.getString("rut", "")
-    if (rut != null && id != null) {
+    if (rut != null && rut.length > 2 && id != null) {
         val rutSinDigitoVerificador = rut.substring(0, rut.length - 2) // Asumiendo que el dígito verificador y el guion ocupan los dos últimos caracteres
         val nroCliente = "$rutSinDigitoVerificador$id"
         binding.idEditText.setText(nroCliente)

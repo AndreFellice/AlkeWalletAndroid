@@ -1,9 +1,11 @@
-package com.example.alkewalletandroid.model
+package com.example.alkewalletandroid.model.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.alkewalletandroid.model.entities.User
+import com.example.alkewalletandroid.model.dao.UserDao
 
 @Database(entities = [User::class], version = 1,exportSchema =  false)
 abstract class  AppDataBase : RoomDatabase(){

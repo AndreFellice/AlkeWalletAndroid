@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
     android:textAlignment="gravity"
-    tools:context=".view.Pantalla7ProfileActivity">
+    tools:context=".view.activities.Pantalla7ProfileActivity">
 
     <ImageView
         android:id="@+id/cosmo2"

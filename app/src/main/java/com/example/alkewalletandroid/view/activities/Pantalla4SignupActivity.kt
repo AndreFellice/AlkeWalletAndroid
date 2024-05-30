@@ -1,4 +1,4 @@
-package com.example.alkewalletandroid.view
+package com.example.alkewalletandroid.view.activities
 
 import android.Manifest
 import android.content.ContentValues
@@ -104,7 +104,7 @@ class Pantalla4SignupActivity : AppCompatActivity() {
     }
     private fun navigateToHome() {
         // Pasa la URI de la foto a la actividad de inicio
-        val intent = Intent(this,Pantalla5HomeActivity::class.java).apply {
+        val intent = Intent(this, Pantalla5HomeActivity::class.java).apply {
             putExtra("user_photo_uri", userPhotoUri.toString())
         }
         startActivity(intent)

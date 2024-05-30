@@ -153,4 +153,12 @@
     <string name="ojo4">ojo4</string>
     <string name="ojo5">ojo5</string>
     <string name="perfil_usuario">Mi Perfil</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="transaction_details">Transaction Details</string>
+    <string name="transaction_amount">Transaction Amount</string>
+    <string name="transaction_date">Transaction Date</string>
+    <string name="estrellado">notificaciones</string>
+    <string name="recycler_view_notificaciones_content_description">Lista de notificaciones</string>
+    <string name="atras">flecha volver</string>
+    <string name="logo7">logo notificaciones</string>
 </resources>

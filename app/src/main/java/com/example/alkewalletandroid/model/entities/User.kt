@@ -1,4 +1,4 @@
-package com.example.alkewalletandroid.model
+package com.example.alkewalletandroid.model.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
